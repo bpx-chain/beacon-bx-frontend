@@ -97,7 +97,7 @@ function getBlocks($title, $blocks) {
                                 </a>
                             </td>
                             <td>
-                                <?php echo date("F j, Y, g:i a", $b['body'] -> foliage -> foliage_block_data -> timestamp); ?>
+                                <?php echo date("Y-m-d H:i:s", $b['body'] -> foliage -> foliage_block_data -> timestamp); ?>
                             </td>
                         </tr>
                         <?php
