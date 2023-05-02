@@ -35,9 +35,15 @@ if(!empty($_GET['q'])) {
     $blocks = $q -> fetchAll();
 }
 
-getHeader('Search | BPX Beacon Chain explorer');
-getBlocks('Recent Blocks', $blocks);
-getFooter();
+if(count($blocks) == 1) {
+    header('Location: /blocks/' + $blocks[0]['hash']);
+}
+
+else {
+    getHeader('Search | BPX Beacon Chain explorer');
+    getBlocks('Search Results', $blocks);
+    getFooter();
+}
 
 unset($pdo);
 ?>
