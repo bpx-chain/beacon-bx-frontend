@@ -91,13 +91,13 @@ function getBlocks($title, $blocks) {
                                 </a>
                             </td>
                             <td>
-                                <a href="">
+                                <a href="<?php echo $b['hash']; ?>">
                                     <i class="fas fa-cube"></i>
                                     <span><?php echo $b['hash']; ?></span>
                                 </a>
                             </td>
                             <td>
-                                <?php echo $b['body'] -> height; ?>
+                                <?php echo date("F j, Y, g:i a", $b['body'] -> foliage -> foliage_block_data -> timestamp); ?>
                             </td>
                         </tr>
                         <?php
