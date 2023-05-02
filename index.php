@@ -9,8 +9,10 @@ $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 $pdo -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 $page = 0;
-if(isset($_GET['page']) && is_int($_GET['page']) && $_GET['page'] > 0)
-    $page = $_GET['page'] - 1;
+if(isset($_GET['page']) && is_numeric($_GET['page']))
+    $intPage = intval($_GET['page']);
+    if($intPage > 0)
+        $page = $_GET['page'] - 1;
 
 $task = [
     ':offset' => $page * 50
