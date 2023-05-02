@@ -36,7 +36,7 @@ if(!empty($_GET['q'])) {
 }
 
 if(count($blocks) == 1) {
-    header('Location: /blocks/' + $blocks[0]['hash']);
+    header('Location: /blocks/'.$blocks[0]['hash']);
 }
 
 else {
