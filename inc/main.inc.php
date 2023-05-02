@@ -37,7 +37,7 @@ function getHeader($title) {
                         <h4 class="ms-2 my-auto d-md-none">BC</h4>
                     </a>
 
-                    <form class="input-group w-100 my-auto">
+                    <form method="GET" action="/search" class="input-group w-100 my-auto">
                         <input autocomplete="off" type="search" class="form-control rounded"
                             placeholder='Search: height / hash' />
                         <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
