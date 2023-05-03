@@ -189,6 +189,69 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </h6>
         </div>
         <div class="card-body small">
+            <?php if($body -> execution_payload) { ?>
+            <div class="row pb-2">
+                <div class="col-2">
+                    <strong>Block Number</strong>
+                </div>
+                <div class="col-10">
+                    <?php echo $body -> execution_payload -> blockNumber; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-2">
+                    <strong>Block Hash</strong>
+                </div>
+                <div class="col-10">
+                    <?php echo $body -> execution_payload -> blockHash; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-2">
+                    <strong>Timestamp</strong>
+                </div>
+                <div class="col-10">
+                    <?php echo date("Y-m-d H:i:s", $body -> execution_payload -> timestamp); ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-2">
+                    <strong>Fee Recipient</strong>
+                </div>
+                <div class="col-10">
+                    <?php echo $body -> execution_payload -> feeRecipient; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-2">
+                    <strong>Parent Block Hash</strong>
+                </div>
+                <div class="col-10">
+                    <?php echo $body -> execution_payload -> parentHash; ?>
+                </div>
+            </div>
+            <?php } else { ?>
+                <span class="text-secondary">This block does not contain execution payload</span>
+            <?php } ?>
+            <div class="row pt-2 border-top">
+                <div class="col-2">
+                    <strong>Raw Payload</strong>
+                </div>
+                <div class="col-10">
+                    <pre id="json-raw-payload"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mb-4">
+    <div class="card">
+        <div class="card-header py-3">
+            <h6 class="mb-0">
+                <strong>Withdrawals to Execution Chain</strong>
+            </h6>
+        </div>
+        <div class="card-body small">
             <div class="row pb-2">
                 <div class="col-2">
                     <strong>Block Number</strong>
