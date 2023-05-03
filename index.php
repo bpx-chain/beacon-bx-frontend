@@ -3,6 +3,13 @@
 include_once __DIR__.'/config.inc.php';
 include_once __DIR__.'/inc/main.inc.php';
 
+function bytes($bytes) {
+    $units = array('B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB');
+    $mod = 1024;
+    $power = ($bytes > 0) ? floor(log($bytes, $mod)) : 0;
+    return sprintf($bytes / pow($mod, $power), $units[$power]);
+}
+
 $pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
 $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
@@ -90,7 +97,7 @@ if($state) {
                             <i class="fas fa-hard-drive text-danger fa-3x"></i>
                         </div>
                         <div class="text-end">
-                            <h3><?php echo $state['netspace']; ?></h3>
+                            <h3><?php echo bytes($state['netspace']); ?></h3>
                             <p class="mb-0">Netspace</p>
                         </div>
                     </div>
