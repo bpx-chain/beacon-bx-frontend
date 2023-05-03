@@ -52,10 +52,18 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col">
-                    Header Hash
+                    Beacon Block Hash
                 </div>
                 <div class="col">
                     <?php echo $block['hash']; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col">
+                    Execution Block Hash
+                </div>
+                <div class="col">
+                    <?php echo $body -> foliage -> foliage_block_data -> execution_block_hash; ?>
                 </div>
             </div>
             <div class="row py-2 border-top">
@@ -64,6 +72,83 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                 </div>
                 <div class="col">
                     <?php echo date("Y-m-d H:i:s", $body -> foliage -> foliage_block_data -> timestamp); ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col">
+                    Weight
+                </div>
+                <div class="col">
+                    <?php echo $body -> weight; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col">
+                    Signage Point Index
+                </div>
+                <div class="col">
+                    <?php echo $body -> signage_point_index; ?>
+                </div>
+            </div>
+            <div class="row pt-2 border-top">
+                <div class="col">
+                    Total Iterations
+                </div>
+                <div class="col">
+                    <?php echo $body -> total_iters; ?>
+                </div>
+            </div>
+        </div>
+        <pre id="json-renderer"></pre>
+        </div>
+    </div>
+</section>
+<section class="mb-4">
+    <div class="card">
+        <div class="card-header py-3">
+            <h5 class="mb-0">
+                <strong>Proof of Space</strong>
+            </h5>
+        </div>
+        <div class="card-body">
+            <div class="row pb-2">
+                <div class="col">
+                    Challenge
+                </div>
+                <div class="col">
+                    <?php echo $body -> reward_chain_block -> proof_of_space -> challenge; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col">
+                    Plot Public Key
+                </div>
+                <div class="col">
+                    <?php echo $body -> reward_chain_block -> proof_of_space -> plot_public_key; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col">
+                    Plot Pool PH
+                </div>
+                <div class="col">
+                    <?php echo $body -> reward_chain_block -> proof_of_space -> pool_contract_puzzle_hash; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col">
+                    Plot Pool PK
+                </div>
+                <div class="col">
+                    <?php echo $body -> reward_chain_block -> proof_of_space -> pool_public_key; ?>
+                </div>
+            </div>
+            <div class="row pt-2 border-top">
+                <div class="col">
+                    Plot size
+                </div>
+                <div class="col">
+                    K-<?php echo $body -> reward_chain_block -> proof_of_space -> size; ?>
                 </div>
             </div>
         </div>
