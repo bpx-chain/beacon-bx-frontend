@@ -82,8 +82,15 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     <?php echo $body -> reward_chain_block -> weight; ?>
                 </div>
             </div>
+            <div class="row pt-2 border-top">
+                <div class="col-2">
+                    Raw Block
+                </div>
+                <div class="col-10">
+                    <pre id="json-raw-block"></pre>
+                </div>
+            </div>
         </div>
-        <pre id="json-renderer"></pre>
     </div>
 </section>
 <section class="mb-4">
@@ -137,12 +144,74 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
         </div>
     </div>
 </section>
+<section class="mb-4">
+    <div class="card">
+        <div class="card-header py-3">
+            <h6 class="mb-0">
+                <strong>Execution Payload</strong>
+            </h6>
+        </div>
+        <div class="card-body">
+            <div class="row pb-2">
+                <div class="col-2">
+                    Challenge
+                </div>
+                <div class="col-10">
+                    <?php echo $body -> reward_chain_block -> proof_of_space -> challenge; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-2">
+                    Plot Public Key
+                </div>
+                <div class="col-10">
+                    <?php echo $body -> reward_chain_block -> proof_of_space -> plot_public_key; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-2">
+                    Plot Pool PH
+                </div>
+                <div class="col-10">
+                    <?php echo $body -> reward_chain_block -> proof_of_space -> pool_contract_puzzle_hash; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-2">
+                    Plot Pool PK
+                </div>
+                <div class="col-10">
+                    <?php echo $body -> reward_chain_block -> proof_of_space -> pool_public_key; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-2">
+                    Plot size
+                </div>
+                <div class="col-10">
+                    K-<?php echo $body -> reward_chain_block -> proof_of_space -> size; ?>
+                </div>
+            </div>
+            <div class="row pt-2 border-top">
+                <div class="col-2">
+                    Raw Payload
+                </div>
+                <div class="col-10">
+                    <pre id="json-raw-payload"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <script type="text/javascript">
 $(document).ready(function() {
-    var json = <?php echo $block['body']; ?>;
-    $('#json-renderer').jsonViewer(json, {
+    var jsonBlock = <?php echo $block['body']; ?>;
+    var jsonPayload = <?php echo json_encode($body -> execution_payload); ?>
+    var options = {
         collapsed: true
-    });
+    };
+    $('#json-raw-block').jsonViewer(jsonBlock, options);
+    $('#json-raw-payload').jsonViewer(jsonPayload, options);
 });
 </script>
 <?php
