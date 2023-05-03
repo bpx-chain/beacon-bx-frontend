@@ -266,7 +266,6 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                         <?php
                         if(isset($body -> execution_payload -> withdrawals))
                         foreach($body -> execution_payload -> withdrawals as $w) {
-                            $b['body'] = json_decode($b['body']);
                         ?>
                         <tr>
                             <td>
