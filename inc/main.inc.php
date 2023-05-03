@@ -103,7 +103,7 @@ function getBlocks($title, $blocks, $page) {
                         </a>
                     </li>
                     <?php } ?>
-                    <li class="page-item ms-auto<?php if(count($blocks != 50) echo ' disabled'; ?>">
+                    <li class="page-item ms-auto<?php if(count($blocks != 50)) echo ' disabled'; ?>">
                         <a class="page-link" href="?page=<?php echo $page + 1; ?>">Next</a>
                     </li>
                 </ul>
