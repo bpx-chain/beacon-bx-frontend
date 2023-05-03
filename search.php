@@ -47,7 +47,7 @@ if(!empty($_GET['q'])) {
             $sql = 'SELECT *
                     FROM blocks
                     WHERE hash = :hash
-                    OR execution_block_hash = :hash';
+                    OR execution_block_hash = :execution_block_hash';
         }
         
         // Address
