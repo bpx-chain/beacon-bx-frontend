@@ -9,10 +9,11 @@ $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 $pdo -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 $page = 0;
-if(isset($_GET['page']) && is_numeric($_GET['page']))
+if(isset($_GET['page']) && is_numeric($_GET['page'])) {
     $intPage = intval($_GET['page']);
     if($intPage > 0)
         $page = $_GET['page'] - 1;
+}
 
 $task = [
     ':offset' => $page * 50
@@ -93,7 +94,7 @@ getHeader('BPX Beacon Chain explorer');
         </div>
 </section>         
 <?php
-getBlocks('Recent Blocks', $blocks);
+getBlocks('Recent Blocks', $blocks, $page);
 
 getFooter();
 unset($pdo);
