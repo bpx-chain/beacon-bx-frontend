@@ -8,15 +8,15 @@ $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 $pdo -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$page = 0;
+$page = 1;
 if(isset($_GET['page']) && is_numeric($_GET['page'])) {
     $intPage = intval($_GET['page']);
-    if($intPage > 0)
-        $page = $_GET['page'] - 1;
+    if($intPage > 1)
+        $page = $intPage;
 }
 
 $task = [
-    ':offset' => $page * 50
+    ':offset' => ($page - 1) * 50
 ];
 
 $sql = 'SELECT *
