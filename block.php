@@ -105,9 +105,9 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
 <section class="mb-4">
     <div class="card">
         <div class="card-header py-3">
-            <h5 class="mb-0">
+            <h6 class="mb-0">
                 <strong>Proof of Space</strong>
-            </h5>
+            </h6>
         </div>
         <div class="card-body">
             <div class="row pb-2">
