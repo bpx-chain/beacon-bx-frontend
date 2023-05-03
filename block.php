@@ -100,7 +100,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                 <strong>Proof of Space</strong>
             </h6>
         </div>
-        <div class="card-body">
+        <div class="card-body small">
             <div class="row pb-2">
                 <div class="col-2">
                     <strong>Challenge</strong>
@@ -151,7 +151,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                 <strong>Execution Payload</strong>
             </h6>
         </div>
-        <div class="card-body">
+        <div class="card-body small">
             <div class="row pb-2">
                 <div class="col-2">
                     <strong>Challenge</strong>
