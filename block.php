@@ -23,7 +23,7 @@ $sql = 'SELECT *
 
 $q = $pdo -> prepare($sql);
 $q -> execute($task);
-$block = $q -> fetc();
+$block = $q -> fetch();
 
 if(!$block) {
     header('Location: /404');
