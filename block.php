@@ -32,41 +32,6 @@ if(!$block) {
 
 getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
 ?>
-<section class="pb-4">
-  <div class="bg-white border rounded-5">
-    
-<section class="w-100 p-4 text-center pb-4">
-
-      <p class="mb-0">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae nihil hic delectus
-        excepturi ipsam reprehenderit iusto rem, quam, repellendus accusantium culpa reiciendis sit
-        dolorum aut aperiam a architecto. Fuga, sit.
-      </p>
-    </section>
-
-    
-    
-    <div class="p-4 text-center border-top mobile-hidden">
-      <a class="btn btn-link px-3" data-mdb-toggle="collapse" href="#example1" role="button" aria-expanded="false" aria-controls="example1" data-ripple-color="hsl(0, 0%, 67%)">
-        <i class="fas fa-code me-md-2"></i>
-        <span class="d-none d-md-inline-block">
-          Show code
-        </span>
-      </a>
-      
-      
-        <a class="btn btn-link px-3 " data-ripple-color="hsl(0, 0%, 67%)">
-          <i class="fas fa-file-code me-md-2 pe-none"></i>
-          <span class="d-none d-md-inline-block export-to-snippet pe-none">
-            Edit in sandbox
-          </span>
-        </a>
-      
-    </div>
-    
-    
-  </div>
-</section>
 <section class="mb-4">
     <div class="card">
         <div class="card-header py-3">
@@ -75,7 +40,13 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </h5>
         </div>
         <div class="card-body">
-            <div class="row py-2">
+            <section>
+            test
+            </section>
+            <section>
+            test
+            </section>
+            <div class="row pb-2">
                 <div class="col">
                     Block Height
                 </div>
