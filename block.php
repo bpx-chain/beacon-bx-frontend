@@ -103,7 +103,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
         <div class="card-body">
             <div class="row pb-2">
                 <div class="col-2">
-                    Challenge
+                    <strong>Challenge</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $body -> reward_chain_block -> proof_of_space -> challenge; ?>
@@ -111,7 +111,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
-                    Plot Public Key
+                    <strong>Plot Public Key</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $body -> reward_chain_block -> proof_of_space -> plot_public_key; ?>
@@ -119,7 +119,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
-                    Plot Pool PH
+                    <strong>Plot Pool PH</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $body -> reward_chain_block -> proof_of_space -> pool_contract_puzzle_hash; ?>
@@ -127,7 +127,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
-                    Plot Pool PK
+                    <strong>Plot Pool PK</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $body -> reward_chain_block -> proof_of_space -> pool_public_key; ?>
@@ -135,7 +135,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row pt-2 border-top">
                 <div class="col-2">
-                    Plot size
+                    <strong>Plot size</strong>
                 </div>
                 <div class="col-10">
                     K-<?php echo $body -> reward_chain_block -> proof_of_space -> size; ?>
@@ -154,7 +154,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
         <div class="card-body">
             <div class="row pb-2">
                 <div class="col-2">
-                    Challenge
+                    <strong>Challenge</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $body -> reward_chain_block -> proof_of_space -> challenge; ?>
@@ -162,7 +162,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
-                    Plot Public Key
+                    <strong>Plot Public Key</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $body -> reward_chain_block -> proof_of_space -> plot_public_key; ?>
@@ -170,7 +170,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
-                    Plot Pool PH
+                    <strong>Plot Pool PH</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $body -> reward_chain_block -> proof_of_space -> pool_contract_puzzle_hash; ?>
@@ -178,7 +178,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
-                    Plot Pool PK
+                    <strong>Plot Pool PK</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $body -> reward_chain_block -> proof_of_space -> pool_public_key; ?>
@@ -186,7 +186,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
-                    Plot size
+                    <strong>Plot size</strong>
                 </div>
                 <div class="col-10">
                     K-<?php echo $body -> reward_chain_block -> proof_of_space -> size; ?>
@@ -194,7 +194,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row pt-2 border-top">
                 <div class="col-2">
-                    Raw Payload
+                    <strong>Raw Payload</strong>
                 </div>
                 <div class="col-10">
                     <pre id="json-raw-payload"></pre>
