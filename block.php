@@ -44,7 +44,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
         <div class="card-body">
             <div class="row pb-2">
                 <div class="col-2">
-                    Block Height
+                    <strong>Block Height</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $block['height']; ?>
@@ -52,7 +52,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
-                    Beacon Block Hash
+                    <strong>Beacon Block Hash</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $block['hash']; ?>
@@ -60,7 +60,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
-                    Execution Block Hash
+                    <strong>Execution Block Hash</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $body -> foliage -> foliage_block_data -> execution_block_hash; ?>
@@ -68,7 +68,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
-                    Timestamp
+                    <strong>Timestamp</strong>
                 </div>
                 <div class="col-10">
                     <?php echo date("Y-m-d H:i:s", $body -> foliage -> foliage_block_data -> timestamp); ?>
@@ -76,7 +76,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
-                    Weight
+                    <strong>Weight</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $body -> reward_chain_block -> weight; ?>
@@ -84,7 +84,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row pt-2 border-top">
                 <div class="col-2">
-                    Raw Block
+                    <strong>Raw Block</strong>
                 </div>
                 <div class="col-10">
                     <pre id="json-raw-block"></pre>
