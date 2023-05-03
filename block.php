@@ -35,7 +35,10 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
 <pre id="json-renderer"></pre>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#json-renderer').jsonViewer(<?php echo $block['body']; ?>);
+    var json = <?php echo $block['body']; ?>;
+    $('#json-renderer').jsonViewer(json, {
+        collapsed: true
+    });
 });
 </script>
 <?php
