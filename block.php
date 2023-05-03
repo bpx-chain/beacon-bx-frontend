@@ -206,7 +206,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
 <script type="text/javascript">
 $(document).ready(function() {
     var jsonBlock = <?php echo $block['body']; ?>;
-    var jsonPayload = <?php echo json_encode($body -> execution_payload); ?>
+    var jsonPayload = <?php echo json_encode($body -> execution_payload); ?>;
     var options = {
         collapsed: true
     };
