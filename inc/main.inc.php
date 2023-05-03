@@ -82,7 +82,9 @@ function getBlocks($title, $blocks, $page) {
             <nav>
                 <ul class="pagination">
                     <li class="page-item me-auto<?php if($page == 1) echo ' disabled'; ?>">
-                        <span class="page-link">Previous</span>
+                        <a class="page-link" href="?page=<?php echo $page - 1; ?>">
+                            Previous
+                        </a>
                     </li>
                     <?php if($page != 1) { ?>
                     <li class="page-item">
@@ -104,7 +106,9 @@ function getBlocks($title, $blocks, $page) {
                     </li>
                     <?php } ?>
                     <li class="page-item ms-auto<?php if(count($blocks != 50)) echo ' disabled'; ?>">
-                        <a class="page-link" href="?page=<?php echo $page + 1; ?>">Next</a>
+                        <a class="page-link" href="?page=<?php echo $page + 1; ?>">
+                            Next
+                        </a>
                     </li>
                 </ul>
             </nav>
