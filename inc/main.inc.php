@@ -69,7 +69,7 @@ function getFooter() {
 <?php
 }
 
-function getBlocks($title, $blocks) {
+function getBlocks($title, $blocks, $page) {
 ?>
 <section class="mb-4">
     <div class="card">
@@ -81,26 +81,30 @@ function getBlocks($title, $blocks) {
         <div class="card-body">
             <nav>
                 <ul class="pagination">
-                    <li class="page-item me-auto">
+                    <li class="page-item me-auto<?php if($page == 1) echo ' disabled'; ?>">
                         <span class="page-link">Previous</span>
                     </li>
+                    <?php if($page != 1) { ?>
                     <li class="page-item">
-                        <a class="page-link" href="#">
-                            1
+                        <a class="page-link" href="?page=<?php echo $page - 1; ?>">
+                            <?php echo $page - 1; ?>
                         </a>
                     </li>
+                    <?php } ?>
                     <li class="page-item active" aria-current="page">
                         <span class="page-link">
-                            2
+                            <?php echo $page; ?>
                         </span>
                     </li>
+                    <?php if(count($blocks) == 50) { ?>
                     <li class="page-item">
-                        <a class="page-link" href="#">
-                            3
+                        <a class="page-link" href="?page=<?php echo $page + 1; ?>">
+                            <?php echo $page + 1; ?>
                         </a>
                     </li>
-                    <li class="page-item ms-auto">
-                        <a class="page-link" href="#">Next</a>
+                    <?php } ?>
+                    <li class="page-item ms-auto<?php if(count($blocks != 50) echo ' disabled'; ?>">
+                        <a class="page-link" href="?page=<?php echo $page + 1; ?>">Next</a>
                     </li>
                 </ul>
             </nav>
