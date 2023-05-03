@@ -43,7 +43,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             <section>
             test
             </section>
-            <section>
+            <section class="border-top">
             test
             </section>
             <div class="row pb-2">
