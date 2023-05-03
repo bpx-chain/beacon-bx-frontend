@@ -25,6 +25,7 @@ function getHeader($title) {
             href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
             rel="stylesheet"
         />
+        <script src="https://unpkg.com/@alenaksu/json-viewer@2.0.0/dist/json-viewer.bundle.js"></script>
     </head>
 
     <body>
