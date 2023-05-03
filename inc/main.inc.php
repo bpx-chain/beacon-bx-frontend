@@ -69,7 +69,7 @@ function getFooter() {
 <?php
 }
 
-function getBlocks($title, $blocks, $page) {
+function getBlocks($title, $blocks) {
 ?>
 <section class="mb-4">
     <div class="card">
