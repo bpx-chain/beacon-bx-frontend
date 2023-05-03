@@ -98,7 +98,9 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     <strong>Parent Block</strong>
                 </div>
                 <div class="col-10">
-                    <?php echo $body -> foliage -> prev_block_hash; ?>
+                    <a href="/block/<?php echo $body -> foliage -> prev_block_hash; ?>">
+                        <?php echo $body -> foliage -> prev_block_hash; ?>
+                    </a>
                 </div>
             </div>
             <div class="row pt-2 border-top">
