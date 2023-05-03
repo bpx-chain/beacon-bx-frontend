@@ -65,7 +65,7 @@ if(!empty($_GET['q'])) {
     }
     
     if($task) {
-        $task[':offset'] = $page * 50;
+        $task[':offset'] = ($page - 1) * 50;
         $sql .= ' ORDER BY height DESC
                   LIMIT 50 OFFSET :offset';
         $q = $pdo -> prepare($sql);
