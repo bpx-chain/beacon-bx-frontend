@@ -7,7 +7,7 @@ function bytes($bytes) {
     $units = array('B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB');
     $mod = 1024;
     $power = ($bytes > 0) ? floor(log($bytes, $mod)) : 0;
-    return sprintf($bytes / pow($mod, $power), $units[$power]);
+    return sprintf('%01.2f %s', $bytes / pow($mod, $power), $units[$power]);
 }
 
 $pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
