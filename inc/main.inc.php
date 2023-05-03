@@ -69,7 +69,7 @@ function getFooter() {
 <?php
 }
 
-function getBlocks($title, $blocks) {
+function getBlocks($title, $blocks, $page) {
 ?>
 <section class="mb-4">
     <div class="card">
@@ -81,7 +81,7 @@ function getBlocks($title, $blocks) {
         <div class="card-body">
             <nav>
                 <ul class="pagination">
-                    <li class="page-item disabled">
+                    <li class="page-item me-auto">
                         <span class="page-link">Previous</span>
                     </li>
                     <li class="page-item">
@@ -99,7 +99,7 @@ function getBlocks($title, $blocks) {
                             3
                         </a>
                     </li>
-                    <li class="page-item">
+                    <li class="page-item ms-auto">
                         <a class="page-link" href="#">Next</a>
                     </li>
                 </ul>
