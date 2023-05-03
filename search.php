@@ -20,7 +20,7 @@ if(!empty($_GET['q'])) {
     $task = [
         ':offset' => $page * 50,
         ':q' => $_GET['q'],
-        ':q2' => '%' + strtolower($_GET['q']) + '%'
+        ':q2' => '%'.strtolower($_GET['q']).'%'
     ];
 
     $sql = 'SELECT *
