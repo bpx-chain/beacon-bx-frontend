@@ -32,7 +32,8 @@ function getHeader($title) {
             crossorigin="anonymous">
         </script>
         <!-- JSON Viewer -->
-        <script src="https://unpkg.com/@alenaksu/json-viewer@2.0.0/dist/json-viewer.bundle.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery.json-viewer@1.5.0/json-viewer/jquery.json-viewer.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.json-viewer@1.5.0/json-viewer/jquery.json-viewer.min.css">
     </head>
 
     <body>

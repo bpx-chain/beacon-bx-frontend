@@ -32,9 +32,12 @@ if(!$block) {
 
 getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
 ?>
-<json-viewer>
-<?php echo $block['body']; ?>
-</json-viewer>
+<pre id="json-renderer"></pre>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#json-renderer').jsonViewer(<?php echo $block['body']; ?>);
+});
+</script>
 <?php
 getFooter();
 unset($pdo);
