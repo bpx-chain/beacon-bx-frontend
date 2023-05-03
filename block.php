@@ -31,9 +31,12 @@ if(!$block) {
 }
 
 getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
-
-echo $block['body'];
-
+?>
+<script src="https://unpkg.com/@alenaksu/json-viewer@2.0.0/dist/json-viewer.bundle.js"></script>
+<json-viewer>
+<?php echo $block['body']; ?>
+</json-viewer>
+<?php
 getFooter();
 unset($pdo);
 ?>
