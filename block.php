@@ -230,9 +230,6 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     <?php echo $body -> execution_payload -> parentHash; ?>
                 </div>
             </div>
-            <?php } else { ?>
-                <span class="text-secondary">This block does not contain execution payload</span>
-            <?php } ?>
             <div class="row pt-2 border-top">
                 <div class="col-2">
                     <strong>Raw Payload</strong>
@@ -241,6 +238,9 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     <pre id="json-raw-payload"></pre>
                 </div>
             </div>
+            <?php } else { ?>
+                <span class="text-secondary">This block does not contain execution payload</span>
+            <?php } ?>
         </div>
     </div>
 </section>
