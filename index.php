@@ -15,6 +15,9 @@ if(isset($_GET['page']) && is_numeric($_GET['page'])) {
         $page = $intPage;
 }
 
+$q = $pdo -> query('SELECT * FROM state');
+$state = $q -> fetch();
+
 $task = [
     ':offset' => ($page - 1) * 50
 ];
@@ -29,6 +32,8 @@ $q -> execute($task);
 $blocks = $q -> fetchAll();
 
 getHeader('BPX Beacon Chain explorer');
+
+if($state) {
 ?>
 <section>
     <div class="row">
@@ -40,7 +45,7 @@ getHeader('BPX Beacon Chain explorer');
                             <i class="fas fa-network-wired text-info fa-3x"></i>
                         </div>
                         <div class="text-end">
-                            <h3>testnet</h3>
+                            <h3><?php echo $state['network_name']; ?></h3>
                             <p class="mb-0">Network name</p>
                         </div>
                     </div>
@@ -55,7 +60,7 @@ getHeader('BPX Beacon Chain explorer');
                             <i class="fas fa-arrows-up-to-line text-warning fa-3x"></i>
                         </div>
                         <div class="text-end">
-                            <h3>156</h3>
+                            <h3><?php echo $state['peak_height']; ?></h3>
                             <p class="mb-0">Peak Height</p>
                         </div>
                     </div>
@@ -70,7 +75,7 @@ getHeader('BPX Beacon Chain explorer');
                             <i class="fas fa-scale-balanced text-success fa-3x"></i>
                         </div>
                         <div class="text-end">
-                            <h3>64.89 %</h3>
+                            <h3><?php echo $state['difficulty']; ?></h3>
                             <p class="mb-0">Difficulty</p>
                         </div>
                     </div>
@@ -85,7 +90,7 @@ getHeader('BPX Beacon Chain explorer');
                             <i class="fas fa-hard-drive text-danger fa-3x"></i>
                         </div>
                         <div class="text-end">
-                            <h3>423</h3>
+                            <h3><?php echo $state['netspace']; ?></h3>
                             <p class="mb-0">Netspace</p>
                         </div>
                     </div>
@@ -94,6 +99,8 @@ getHeader('BPX Beacon Chain explorer');
         </div>
 </section>         
 <?php
+}
+
 getBlocks('Recent Blocks', $blocks, $page);
 
 getFooter();
