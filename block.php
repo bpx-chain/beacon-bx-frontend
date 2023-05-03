@@ -285,7 +285,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                                 <?php echo $w -> address; ?>
                             </td>
                             <td>
-                                <?php echo $w -> amount; ?> BPX
+                                <?php echo bcdiv($w -> amount, '1000000000'); ?> BPX
                             </td>
                         </tr>
                         <?php
