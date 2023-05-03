@@ -44,7 +44,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
         <div class="card-body">
             <div class="row pb-2">
                 <div class="col-2">
-                    <strong class="secondary">Block Height</strong>
+                    <strong class="text-secondary">Block Height</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $block['height']; ?>
