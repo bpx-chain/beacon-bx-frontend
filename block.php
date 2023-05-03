@@ -79,23 +79,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     Weight
                 </div>
                 <div class="col">
-                    <?php echo $body -> weight; ?>
-                </div>
-            </div>
-            <div class="row py-2 border-top">
-                <div class="col">
-                    Signage Point Index
-                </div>
-                <div class="col">
-                    <?php echo $body -> signage_point_index; ?>
-                </div>
-            </div>
-            <div class="row pt-2 border-top">
-                <div class="col">
-                    Total Iterations
-                </div>
-                <div class="col">
-                    <?php echo $body -> total_iters; ?>
+                    <?php echo $body -> reward_chain_block -> weight; ?>
                 </div>
             </div>
         </div>
