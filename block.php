@@ -269,23 +269,23 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                         ?>
                         <tr>
                             <td>
-                                <?php echo $w['index']; ?>
+                                <?php echo $w -> index; ?>
                             </td>
                             <td>
                                 <strong>
                                 <?php
-                                    if($w['validatorIndex'] == 0) echo 'Prefarm';
-                                    else if($w['validatorIndex'] == 1) echo 'Block Reward';
+                                    if($w -> validatorIndex == 0) echo 'Prefarm';
+                                    else if($w -> validatorIndex == 1) echo 'Block Reward';
                                     else echo 'Unknown';
                                 ?>
                                 </strong>
-                                (<?php echo $w['validatorIndex']; ?>)
+                                (<?php echo $w -> validatorIndex; ?>)
                             </td>
                             <td>
-                                <?php echo $w['address']; ?>
+                                <?php echo $w -> address; ?>
                             </td>
                             <td>
-                                <?php echo $w['amount']; ?> BPX
+                                <?php echo $w -> amount; ?> BPX
                             </td>
                         </tr>
                         <?php
