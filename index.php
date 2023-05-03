@@ -48,7 +48,7 @@ if($state) {
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between px-md-1">
-                        <div class="align-self-center">
+                        <div class="d-none d-md-block align-self-center">
                             <i class="fas fa-network-wired text-info fa-3x"></i>
                         </div>
                         <div class="text-end">
@@ -63,7 +63,7 @@ if($state) {
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between px-md-1">
-                        <div class="align-self-center">
+                        <div class="d-none d-md-block align-self-center">
                             <i class="fas fa-arrows-up-to-line text-warning fa-3x"></i>
                         </div>
                         <div class="text-end">
@@ -78,7 +78,7 @@ if($state) {
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between px-md-1">
-                        <div class="align-self-center">
+                        <div class="d-none d-md-block align-self-center">
                             <i class="fas fa-scale-balanced text-success fa-3x"></i>
                         </div>
                         <div class="text-end">
@@ -93,7 +93,7 @@ if($state) {
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between px-md-1">
-                        <div class="align-self-center">
+                        <div class="d-none d-md-block align-self-center">
                             <i class="fas fa-hard-drive text-danger fa-3x"></i>
                         </div>
                         <div class="text-end">
