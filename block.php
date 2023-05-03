@@ -30,6 +30,8 @@ if(!$block) {
     die();
 }
 
+$body = json_decode($block['body']);
+
 getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
 ?>
 <section class="mb-4">
@@ -40,24 +42,28 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </h5>
         </div>
         <div class="card-body">
-            <section>
-            test
-            </section>
-            <section class="border-top">
-            test
-            </section>
             <div class="row pb-2">
                 <div class="col">
                     Block Height
                 </div>
                 <div class="col">
+                    <?php echo $block['height']; ?>
                 </div>
             </div>
             <div class="row py-2 border-top">
                 <div class="col">
-                    Block Height
+                    Header Hash
                 </div>
                 <div class="col">
+                    <?php echo $block['hash']; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col">
+                    Timestamp
+                </div>
+                <div class="col">
+                    <?php echo date("Y-m-d H:i:s", $body -> foliage -> foliage_block_data -> timestamp); ?>
                 </div>
             </div>
         </div>
