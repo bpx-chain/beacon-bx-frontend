@@ -46,7 +46,7 @@ if($state) {
     <div class="row">
         <div class="col-6 col-md-4 col-lg-3 mb-4">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body w-100">
                     <div class="d-flex justify-content-between px-md-1">
                         <div class="align-self-center">
                             <i class="fas fa-network-wired text-info fa-3x"></i>
@@ -61,7 +61,7 @@ if($state) {
         </div>
         <div class="col-6 col-md-4 col-lg-3 mb-4">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body w-100">
                     <div class="d-flex justify-content-between px-md-1">
                         <div class="align-self-center">
                             <i class="fas fa-arrows-up-to-line text-warning fa-3x"></i>
@@ -76,7 +76,7 @@ if($state) {
         </div>
         <div class="col-6 col-md-4 col-lg-3 mb-4">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body w-100">
                     <div class="d-flex justify-content-between px-md-1">
                         <div class="align-self-center">
                             <i class="fas fa-scale-balanced text-success fa-3x"></i>
@@ -91,7 +91,7 @@ if($state) {
         </div>
         <div class="col-6 col-md-4 col-lg-3 mb-4">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body w-100">
                     <div class="d-flex justify-content-between px-md-1">
                         <div class="align-self-center">
                             <i class="fas fa-hard-drive text-danger fa-3x"></i>
