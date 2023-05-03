@@ -43,42 +43,42 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
         </div>
         <div class="card-body">
             <div class="row pb-2">
-                <div class="col">
+                <div class="col-2">
                     Block Height
                 </div>
-                <div class="col">
+                <div class="col-10">
                     <?php echo $block['height']; ?>
                 </div>
             </div>
             <div class="row py-2 border-top">
-                <div class="col">
+                <div class="col-2">
                     Beacon Block Hash
                 </div>
-                <div class="col">
+                <div class="col-10">
                     <?php echo $block['hash']; ?>
                 </div>
             </div>
             <div class="row py-2 border-top">
-                <div class="col">
+                <div class="col-2">
                     Execution Block Hash
                 </div>
-                <div class="col">
+                <div class="col-10">
                     <?php echo $body -> foliage -> foliage_block_data -> execution_block_hash; ?>
                 </div>
             </div>
             <div class="row py-2 border-top">
-                <div class="col">
+                <div class="col-2">
                     Timestamp
                 </div>
-                <div class="col">
+                <div class="col-10">
                     <?php echo date("Y-m-d H:i:s", $body -> foliage -> foliage_block_data -> timestamp); ?>
                 </div>
             </div>
             <div class="row py-2 border-top">
-                <div class="col">
+                <div class="col-2">
                     Weight
                 </div>
-                <div class="col">
+                <div class="col-10">
                     <?php echo $body -> reward_chain_block -> weight; ?>
                 </div>
             </div>
@@ -95,42 +95,42 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
         </div>
         <div class="card-body">
             <div class="row pb-2">
-                <div class="col">
+                <div class="col-2">
                     Challenge
                 </div>
-                <div class="col">
+                <div class="col-10">
                     <?php echo $body -> reward_chain_block -> proof_of_space -> challenge; ?>
                 </div>
             </div>
             <div class="row py-2 border-top">
-                <div class="col">
+                <div class="col-2">
                     Plot Public Key
                 </div>
-                <div class="col">
+                <div class="col-10">
                     <?php echo $body -> reward_chain_block -> proof_of_space -> plot_public_key; ?>
                 </div>
             </div>
             <div class="row py-2 border-top">
-                <div class="col">
+                <div class="col-2">
                     Plot Pool PH
                 </div>
-                <div class="col">
+                <div class="col-10">
                     <?php echo $body -> reward_chain_block -> proof_of_space -> pool_contract_puzzle_hash; ?>
                 </div>
             </div>
             <div class="row py-2 border-top">
-                <div class="col">
+                <div class="col-2">
                     Plot Pool PK
                 </div>
-                <div class="col">
+                <div class="col-10">
                     <?php echo $body -> reward_chain_block -> proof_of_space -> pool_public_key; ?>
                 </div>
             </div>
             <div class="row pt-2 border-top">
-                <div class="col">
+                <div class="col-2">
                     Plot size
                 </div>
-                <div class="col">
+                <div class="col-10">
                     K-<?php echo $body -> reward_chain_block -> proof_of_space -> size; ?>
                 </div>
             </div>
