@@ -37,7 +37,7 @@ if(!empty($_GET['q'])) {
 }
 
 getHeader('Search | BPX Beacon Chain explorer');
-getBlocks('Search Results', $blocks, $page);
+getBlocks('Search Results', $blocks, $page, '&q='.$_GET['q']);
 getFooter();
 
 unset($pdo);

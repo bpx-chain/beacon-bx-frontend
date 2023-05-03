@@ -69,7 +69,7 @@ function getFooter() {
 <?php
 }
 
-function getBlocks($title, $blocks, $page) {
+function getBlocks($title, $blocks, $page, $appendGet = '') {
 ?>
 <section class="mb-4">
     <div class="card">
@@ -82,13 +82,13 @@ function getBlocks($title, $blocks, $page) {
             <nav>
                 <ul class="pagination">
                     <li class="page-item me-auto<?php if($page == 1) echo ' disabled'; ?>">
-                        <a class="page-link" href="?page=<?php echo $page - 1; ?>">
+                        <a class="page-link" href="?page=<?php echo ($page - 1).$appendGet; ?>">
                             Previous
                         </a>
                     </li>
                     <?php if($page != 1) { ?>
                     <li class="page-item">
-                        <a class="page-link" href="?page=<?php echo $page - 1; ?>">
+                        <a class="page-link" href="?page=<?php echo ($page - 1).$appendGet; ?>">
                             <?php echo $page - 1; ?>
                         </a>
                     </li>
@@ -100,13 +100,13 @@ function getBlocks($title, $blocks, $page) {
                     </li>
                     <?php if(count($blocks) == 50) { ?>
                     <li class="page-item">
-                        <a class="page-link" href="?page=<?php echo $page + 1; ?>">
+                        <a class="page-link" href="?page=<?php echo ($page + 1).$appendGet; ?>">
                             <?php echo $page + 1; ?>
                         </a>
                     </li>
                     <?php } ?>
                     <li class="page-item ms-auto<?php if(count($blocks) != 50) echo ' disabled'; ?>">
-                        <a class="page-link" href="?page=<?php echo $page + 1; ?>">
+                        <a class="page-link" href="?page=<?php echo ($page + 1).$appendGet; ?>">
                             Next
                         </a>
                     </li>
