@@ -154,7 +154,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     <?php
                         echo $body -> reward_chain_block -> proof_of_space -> pool_contract_puzzle_hash
                             ? $body -> reward_chain_block -> proof_of_space -> pool_contract_puzzle_hash
-                            : '<i class="color-secondary">(null)</i>';
+                            : '<i class="text-secondary">(null)</i>';
                     ?>
                 </div>
             </div>
@@ -166,7 +166,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     <?php
                         echo $body -> reward_chain_block -> proof_of_space -> pool_public_key
                             ? $body -> reward_chain_block -> proof_of_space -> pool_public_key
-                            : '<i class="color-secondary">(null)</i>';
+                            : '<i class="text-secondary">(null)</i>';
                     ?>
                 </div>
             </div>
