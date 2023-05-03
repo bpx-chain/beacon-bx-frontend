@@ -48,7 +48,7 @@ function getHeader($title) {
 
                     <form method="GET" action="/search" class="input-group w-100 my-auto">
                         <input autocomplete="off" type="search" class="form-control rounded"
-                            placeholder='Search: height / hash' name="q" />
+                            placeholder='Search: height / hash / address' name="q" />
                         <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
                     </form>
                 </div>
