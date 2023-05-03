@@ -47,7 +47,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
         <div class="card-body small">
             <div class="row pb-2">
                 <div class="col-2">
-                    <strong>Block Height</strong>
+                    <strong>Height</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $block['height']; ?>
@@ -55,18 +55,10 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
-                    <strong>Beacon Block Hash</strong>
+                    <strong>Header Hash</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $block['hash']; ?>
-                </div>
-            </div>
-            <div class="row py-2 border-top">
-                <div class="col-2">
-                    <strong>Execution Block Hash</strong>
-                </div>
-                <div class="col-10">
-                    <?php echo $body -> foliage -> foliage_block_data -> execution_block_hash; ?>
                 </div>
             </div>
             <div class="row py-2 border-top">
@@ -79,10 +71,34 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
+                    <strong>Execution Block Hash</strong>
+                </div>
+                <div class="col-10">
+                    <?php echo $body -> foliage -> foliage_block_data -> execution_block_hash; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-2">
+                    <strong>Total Iterations</strong>
+                </div>
+                <div class="col-10">
+                    <?php echo $body -> reward_chain_block -> total_iters; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-2">
                     <strong>Weight</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $body -> reward_chain_block -> weight; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-2">
+                    <strong>Parent Block</strong>
+                </div>
+                <div class="col-10">
+                    <?php echo $body -> foliage -> prev_block_hash; ?>
                 </div>
             </div>
             <div class="row pt-2 border-top">
@@ -110,6 +126,14 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                 </div>
                 <div class="col-10">
                     <?php echo $body -> reward_chain_block -> proof_of_space -> challenge; ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-2">
+                    <strong>Signage Point</strong>
+                </div>
+                <div class="col-10">
+                    <?php echo $body -> reward_chain_block -> signage_point_index; ?>
                 </div>
             </div>
             <div class="row py-2 border-top">
@@ -173,18 +197,26 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
+                    <strong>Timestamp</strong>
+                </div>
+                <div class="col-10">
+                    <?php echo date("Y-m-d H:i:s", $body -> execution_payload -> timestamp); ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-2">
                     <strong>Fee Recipient</strong>
                 </div>
                 <div class="col-10">
                     <?php echo $body -> execution_payload -> feeRecipient; ?>
                 </div>
             </div>
-            <div class="row pb-2 border-top">
+            <div class="row py-2 border-top">
                 <div class="col-2">
-                    <strong>Timestamp</strong>
+                    <strong>Parent Block Hash</strong>
                 </div>
                 <div class="col-10">
-                    <?php echo date("Y-m-d H:i:s", $body -> execution_payload -> timestamp); ?>
+                    <?php echo $body -> execution_payload -> parentHash; ?>
                 </div>
             </div>
             <div class="row pt-2 border-top">
