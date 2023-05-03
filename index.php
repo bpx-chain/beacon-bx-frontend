@@ -44,7 +44,7 @@ if($state) {
 ?>
 <section>
     <div class="row">
-        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between px-md-1">
@@ -59,7 +59,7 @@ if($state) {
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between px-md-1">
@@ -74,7 +74,7 @@ if($state) {
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between px-md-1">
@@ -89,7 +89,7 @@ if($state) {
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+        <div class="col-6 col-md-4 col-lg-3 mb-4">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between px-md-1">
