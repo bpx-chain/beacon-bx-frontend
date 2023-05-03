@@ -8,7 +8,7 @@ $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 $pdo -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-if(!isset($_GET['hash']) || strlen($_GET['hash'] != 66)) {
+if(!isset($_GET['hash']) || strlen($_GET['hash']) != 66) {
     header('Location: /404');
     die();
 }
