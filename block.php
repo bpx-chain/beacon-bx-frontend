@@ -75,14 +75,14 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </h5>
         </div>
         <div class="card-body">
-            <div class="row">
+            <div class="row py-2">
                 <div class="col">
                     Block Height
                 </div>
                 <div class="col">
                 </div>
             </div>
-            <div class="row border-top">
+            <div class="row py-2 border-top">
                 <div class="col">
                     Block Height
                 </div>
