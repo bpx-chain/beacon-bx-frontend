@@ -10,11 +10,12 @@ $pdo -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 $blocks = [];
 
-$page = 0;
-if(isset($_GET['page']) && is_numeric($_GET['page']))
+$page = 1;
+if(isset($_GET['page']) && is_numeric($_GET['page'])) {
     $intPage = intval($_GET['page']);
-    if($intPage > 0)
-        $page = $_GET['page'] - 1;
+    if($intPage > 1)
+        $page = $intPage;
+}
 
 if(!empty($_GET['q'])) {
     $task = [
@@ -35,15 +36,9 @@ if(!empty($_GET['q'])) {
     $blocks = $q -> fetchAll();
 }
 
-if(count($blocks) == 1) {
-    header('Location: /blocks/'.$blocks[0]['hash']);
-}
-
-else {
-    getHeader('Search | BPX Beacon Chain explorer');
-    getBlocks('Search Results', $blocks);
-    getFooter();
-}
+getHeader('Search | BPX Beacon Chain explorer');
+getBlocks('Search Results', $blocks, $page);
+getFooter();
 
 unset($pdo);
 ?>
