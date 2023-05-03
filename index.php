@@ -5,7 +5,7 @@ include_once __DIR__.'/inc/main.inc.php';
 
 function bytes($bytes) {
     $units = array('B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB');
-    $mod = 1024;
+    $mod = 1000;
     $power = ($bytes > 0) ? floor(log($bytes, $mod)) : 0;
     return sprintf('%01.2f %s', $bytes / pow($mod, $power), $units[$power]);
 }
