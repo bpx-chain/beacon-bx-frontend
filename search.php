@@ -25,7 +25,7 @@ if(!empty($_GET['q'])) {
 
     $sql = 'SELECT *
             FROM blocks
-            WHERE height = :q
+            WHERE convert(height,char) = :q
             OR LOWER(hash) LIKE :q2
             ORDER BY height DESC
             LIMIT 50 OFFSET :offset';
