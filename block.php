@@ -157,42 +157,34 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
         <div class="card-body small">
             <div class="row pb-2">
                 <div class="col-2">
-                    <strong>Challenge</strong>
+                    <strong>Block Number</strong>
                 </div>
                 <div class="col-10">
-                    <?php echo $body -> reward_chain_block -> proof_of_space -> challenge; ?>
+                    <?php echo $body -> execution_payload -> blockNumber; ?>
                 </div>
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
-                    <strong>Plot Public Key</strong>
+                    <strong>Block Hash</strong>
                 </div>
                 <div class="col-10">
-                    <?php echo $body -> reward_chain_block -> proof_of_space -> plot_public_key; ?>
+                    <?php echo $body -> execution_payload -> blockHash; ?>
                 </div>
             </div>
             <div class="row py-2 border-top">
                 <div class="col-2">
-                    <strong>Plot Pool PH</strong>
+                    <strong>Fee Recipient</strong>
                 </div>
                 <div class="col-10">
-                    <?php echo $body -> reward_chain_block -> proof_of_space -> pool_contract_puzzle_hash; ?>
+                    <?php echo $body -> execution_payload -> feeRecipient; ?>
                 </div>
             </div>
-            <div class="row py-2 border-top">
+            <div class="row pb-2 border-top">
                 <div class="col-2">
-                    <strong>Plot Pool PK</strong>
+                    <strong>Timestamp</strong>
                 </div>
                 <div class="col-10">
-                    <?php echo $body -> reward_chain_block -> proof_of_space -> pool_public_key; ?>
-                </div>
-            </div>
-            <div class="row py-2 border-top">
-                <div class="col-2">
-                    <strong>Plot size</strong>
-                </div>
-                <div class="col-10">
-                    K-<?php echo $body -> reward_chain_block -> proof_of_space -> size; ?>
+                    <?php echo date("Y-m-d H:i:s", $body -> execution_payload -> timestamp); ?>
                 </div>
             </div>
             <div class="row pt-2 border-top">
