@@ -252,53 +252,47 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </h6>
         </div>
         <div class="card-body small">
-            <div class="row pb-2">
-                <div class="col-2">
-                    <strong>Block Number</strong>
-                </div>
-                <div class="col-10">
-                    <?php echo $body -> execution_payload -> blockNumber; ?>
-                </div>
-            </div>
-            <div class="row py-2 border-top">
-                <div class="col-2">
-                    <strong>Block Hash</strong>
-                </div>
-                <div class="col-10">
-                    <?php echo $body -> execution_payload -> blockHash; ?>
-                </div>
-            </div>
-            <div class="row py-2 border-top">
-                <div class="col-2">
-                    <strong>Timestamp</strong>
-                </div>
-                <div class="col-10">
-                    <?php echo date("Y-m-d H:i:s", $body -> execution_payload -> timestamp); ?>
-                </div>
-            </div>
-            <div class="row py-2 border-top">
-                <div class="col-2">
-                    <strong>Fee Recipient</strong>
-                </div>
-                <div class="col-10">
-                    <?php echo $body -> execution_payload -> feeRecipient; ?>
-                </div>
-            </div>
-            <div class="row py-2 border-top">
-                <div class="col-2">
-                    <strong>Parent Block Hash</strong>
-                </div>
-                <div class="col-10">
-                    <?php echo $body -> execution_payload -> parentHash; ?>
-                </div>
-            </div>
-            <div class="row pt-2 border-top">
-                <div class="col-2">
-                    <strong>Raw Payload</strong>
-                </div>
-                <div class="col-10">
-                    <pre id="json-raw-payload"></pre>
-                </div>
+            <div class="table-responsive">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+                            <th scope="col">Index</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach($body -> execution_payload -> withdrawals as $w) {
+                            $b['body'] = json_decode($b['body']);
+                        ?>
+                        <tr>
+                            <td>
+                                <?php echo $w['index']; ?>
+                            </td>
+                            <td>
+                                <strong>
+                                <?php
+                                    if($w['validatorIndex'] == 0) echo 'Prefarm';
+                                    else if($w['validatorIndex'] == 1) echo 'Block Reward';
+                                    else echo 'Unknown';
+                                ?>
+                                </strong>
+                                (<?php echo $w['validatorIndex']; ?>)
+                            </td>
+                            <td>
+                                <?php echo $w['address']; ?>
+                            </td>
+                            <td>
+                                <?php echo $w['amount']; ?> BPX
+                            </td>
+                        </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
