@@ -151,7 +151,11 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     <strong>Plot Pool PH</strong>
                 </div>
                 <div class="col-10">
-                    <?php echo $body -> reward_chain_block -> proof_of_space -> pool_contract_puzzle_hash; ?>
+                    <?php
+                        echo $body -> reward_chain_block -> proof_of_space -> pool_contract_puzzle_hash
+                            ? $body -> reward_chain_block -> proof_of_space -> pool_contract_puzzle_hash
+                            : '<i class="color-secondary">(null)</i>';
+                    ?>
                 </div>
             </div>
             <div class="row py-2 border-top">
@@ -159,7 +163,11 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     <strong>Plot Pool PK</strong>
                 </div>
                 <div class="col-10">
-                    <?php echo $body -> reward_chain_block -> proof_of_space -> pool_public_key; ?>
+                    <?php
+                        echo $body -> reward_chain_block -> proof_of_space -> pool_public_key
+                            ? $body -> reward_chain_block -> proof_of_space -> pool_public_key
+                            : '<i class="color-secondary">(null)</i>';
+                    ?>
                 </div>
             </div>
             <div class="row pt-2 border-top">
