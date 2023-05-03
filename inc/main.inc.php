@@ -91,7 +91,7 @@ function getBlocks($title, $blocks) {
                                 </a>
                             </td>
                             <td>
-                                <a href="<?php echo $b['hash']; ?>">
+                                <a href="/block/<?php echo $b['hash']; ?>">
                                     <i class="fas fa-cube"></i>
                                     <span><?php echo $b['hash']; ?></span>
                                 </a>
