@@ -32,7 +32,18 @@ if(!$block) {
 
 getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
 ?>
-<pre id="json-renderer"></pre>
+<section class="mb-4">
+    <div class="card">
+        <div class="card-header text-center py-3">
+            <h5 class="mb-0 text-center">
+                <strong>Block <?php echo $block['height']; ?></strong>
+            </h5>
+        </div>
+        <div class="card-body">
+            <pre id="json-renderer"></pre>
+        </div>
+    </div>
+</section>
 <script type="text/javascript">
 $(document).ready(function() {
     var json = <?php echo $block['body']; ?>;
