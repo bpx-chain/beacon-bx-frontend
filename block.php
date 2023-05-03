@@ -152,8 +152,6 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                 </div>
             </div>
         </div>
-        <pre id="json-renderer"></pre>
-        </div>
     </div>
 </section>
 <script type="text/javascript">
