@@ -67,22 +67,6 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </div>
             <div class="row py-2 border-top">
                 <div class="col-12 col-md-3 col-lg-2">
-                    <strong>Timestamp</strong>
-                </div>
-                <div class="col-12 col-md-9 col-lg-10">
-                    <?php echo date("Y-m-d H:i:s", $body -> foliage -> foliage_block_data -> timestamp); ?>
-                </div>
-            </div>
-            <div class="row py-2 border-top">
-                <div class="col-12 col-md-3 col-lg-2">
-                    <strong>Execution Block Hash</strong>
-                </div>
-                <div class="col-12 col-md-9 col-lg-10">
-                    <?php echo $body -> foliage -> foliage_block_data -> execution_block_hash; ?>
-                </div>
-            </div>
-            <div class="row py-2 border-top">
-                <div class="col-12 col-md-3 col-lg-2">
                     <strong>Total Iterations</strong>
                 </div>
                 <div class="col-12 col-md-9 col-lg-10">
@@ -109,6 +93,24 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     <?php } ?>
                 </div>
             </div>
+            <?php if(isset($block['timestamp'])) { ?>
+            <div class="row py-2 border-top">
+                <div class="col-12 col-md-3 col-lg-2">
+                    <strong>Timestamp</strong>
+                </div>
+                <div class="col-12 col-md-9 col-lg-10">
+                    <?php echo date("Y-m-d H:i:s", $body -> foliage -> foliage_block_data -> timestamp); ?>
+                </div>
+            </div>
+            <div class="row py-2 border-top">
+                <div class="col-12 col-md-3 col-lg-2">
+                    <strong>Execution Block Hash</strong>
+                </div>
+                <div class="col-12 col-md-9 col-lg-10">
+                    <?php echo $body -> foliage -> foliage_block_data -> execution_block_hash; ?>
+                </div>
+            </div>
+            <?php } ?>
             <div class="row pt-2 border-top">
                 <div class="col-12 col-md-3 col-lg-2">
                     <strong>Raw Block</strong>
