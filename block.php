@@ -44,7 +44,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     <?php } else { ?>
                     <i class="fa-regular fa-square-full"></i>
                     <?php } ?>
-                    Block <?php echo $block['height']; ?> in BPX Beacon Chain
+                    Beacon Block #<?php echo $block['height']; ?>
                 </strong>
             </h5>
         </div>
