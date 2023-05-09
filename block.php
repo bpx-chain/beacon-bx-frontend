@@ -274,6 +274,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             </h6>
         </div>
         <div class="card-body small">
+            <?php if($body -> execution_payload) { ?>
             <div class="table-responsive">
                 <table class="table table-hover text-nowrap">
                     <thead>
@@ -316,6 +317,9 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     </tbody>
                 </table>
             </div>
+            <?php } else { ?>
+            <span class="text-secondary">This block does not contain withdrawals</span>
+            <?php } ?>
         </div>
     </div>
 </section>
