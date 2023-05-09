@@ -84,7 +84,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                 <div class="col-12 col-md-9 col-lg-10">
                     <?php
                         echo $block['timestamp']
-                            ? $body -> foliage_transaction_block -> timestamp
+                            ? $body -> foliage_transaction_block -> execution_block_hash
                             : '<span class="text-secondary">(null)</span>';
                     ?>
                 </div>
