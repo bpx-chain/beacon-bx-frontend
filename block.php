@@ -117,6 +117,14 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     <?php } ?>
                 </div>
             </div>
+            <div class="row py-2 border-top">
+                <div class="col-12 col-md-3 col-lg-2">
+                    <strong>Farmer Address</strong>
+                </div>
+                <div class="col-12 col-md-9 col-lg-10">
+                    <?php echo $block['coinbase']; ?>
+                </div>
+            </div>
             <div class="row pt-2 border-top">
                 <div class="col-12 col-md-3 col-lg-2">
                     <strong>Raw Block</strong>
