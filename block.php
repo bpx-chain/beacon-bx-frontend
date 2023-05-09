@@ -39,7 +39,11 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
         <div class="card-header py-3">
             <h5 class="mb-0 text-primary">
                 <strong>
-                    <i class="fas fa-cube"></i>
+                    <?php if(isset($block['timestamp'])) { ?>
+                    <i class="fa-solid fa-square-full"></i>
+                    <?php } else { ?>
+                    <i class="fa-regular fa-square-full"></i>
+                    <?php } ?>
                     Block <?php echo $block['height']; ?> in BPX Beacon Chain
                 </strong>
             </h5>
