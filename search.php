@@ -28,7 +28,7 @@ if(!empty($_GET['q'])) {
             ':height' => intval($q)
         ];
         
-        $sql = 'SELECT *
+        $sql = 'SELECT height, hash, timestamp
                 FROM blocks
                 WHERE height = :height';
     }
@@ -44,7 +44,7 @@ if(!empty($_GET['q'])) {
                 ':execution_block_hash' => $q
             ];
             
-            $sql = 'SELECT *
+            $sql = 'SELECT height, hash, timestamp
                     FROM blocks
                     WHERE hash = :hash
                     OR execution_block_hash = :execution_block_hash';
@@ -53,13 +53,15 @@ if(!empty($_GET['q'])) {
         // Address
         else if(preg_match('/^0x[0-9a-f]{40}$/', $q)) {
             $task = [
+                ':coinbase' => $q,
                 ':fee_recipient' => $q,
                 ':wd_addresses' => '%'.$q.'%'
             ];
             
-            $sql = 'SELECT *
+            $sql = 'SELECT height, hash, timestamp
                     FROM blocks
-                    WHERE fee_recipient = :fee_recipient
+                    WHERE coinbase = :coinbase
+                    OR fee_recipient = :fee_recipient
                     OR wd_addresses LIKE :wd_addresses';
         }
     }

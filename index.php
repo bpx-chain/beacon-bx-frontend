@@ -29,7 +29,7 @@ $task = [
     ':offset' => ($page - 1) * 50
 ];
 
-$sql = 'SELECT *
+$sql = 'SELECT height, hash, timestamp
         FROM blocks
         ORDER BY height DESC
         LIMIT 50 OFFSET :offset';

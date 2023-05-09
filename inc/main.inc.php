@@ -124,7 +124,6 @@ function getBlocks($title, $blocks, $page, $appendGet = '') {
                     <tbody>
                         <?php
                         foreach($blocks as $b) {
-                            $b['body'] = json_decode($b['body']);
                         ?>
                         <tr>
                             <td>
@@ -134,12 +133,16 @@ function getBlocks($title, $blocks, $page, $appendGet = '') {
                             </td>
                             <td>
                                 <a href="/block/<?php echo $b['hash']; ?>">
+                                    <?php if(isset($b['timestamp'])) { ?>
                                     <i class="fas fa-cube"></i>
+                                    <?php } else { ?>
+                                    <i class="fa-regular fa-cube"></i>
+                                    <?php } ?>
                                     <span><?php echo $b['hash']; ?></span>
                                 </a>
                             </td>
                             <td>
-                                <?php echo date("Y-m-d H:i:s", $b['body'] -> foliage -> foliage_block_data -> timestamp); ?>
+                                <?php if(isset($b['timestamp'])) echo date("Y-m-d H:i:s", $b['timestamp']); ?>
                             </td>
                         </tr>
                         <?php
