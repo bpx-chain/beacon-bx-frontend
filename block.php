@@ -296,7 +296,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                             <td>
                                 <strong>
                                 <?php
-                                    if($w -> validatorIndex == 0) echo 'Prefarm';
+                                    if($w -> validatorIndex == 0) echo 'Bridge V2 to V3';
                                     else if($w -> validatorIndex == 1) echo 'Block Reward';
                                     else echo 'Unknown';
                                 ?>
