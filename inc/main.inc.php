@@ -132,7 +132,7 @@ function getBlocks($title, $blocks, $page, $appendGet = '') {
                                 </a>
                             </td>
                             <td>
-                                <a href="/block/<?php echo $b['hash']; ?>">
+                                <a href="/block/<?php echo $b['height']; ?>">
                                     <?php if(isset($b['timestamp'])) { ?>
                                     <i class="fa-solid fa-square-full"></i>
                                     <?php } else { ?>
