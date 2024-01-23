@@ -263,7 +263,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
             <div class="row pt-2">
                 <div class="alert alert-secondary" role="alert">
                     <i class="fa-solid fa-link"></i>
-                    <a href="<?php echo EC_EXPLORER_URL.'/block/.$body -> execution_payload -> blockNumber; ?>" target="_blank">
+                    <a href="<?php echo EC_EXPLORER_URL.'/block/'.$body -> execution_payload -> blockNumber; ?>" target="_blank">
                         View block <?php echo $body -> execution_payload -> blockNumber; ?> in Execution Chain block explorer
                     </a>
                 </div>
