@@ -127,7 +127,7 @@ function getBlocks($title, $blocks, $page, $appendGet = '') {
                         ?>
                         <tr>
                             <td>
-                                <a href="/block/<?php echo $b['hash']; ?>">
+                                <a href="/block/<?php echo $b['height']; ?>">
                                     <?php echo $b['height']; ?>
                                 </a>
                             </td>

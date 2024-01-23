@@ -8,18 +8,18 @@ $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 $pdo -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-if(!isset($_GET['hash']) || strlen($_GET['hash']) != 66) {
+if(!isset($_GET['height']) || !ctype_digit($_GET['height'])) {
     header('Location: /404');
     die();
 }
 
 $task = [
-    ':hash' => $_GET['hash']
+    ':height' => $_GET['height']
 ];
 
 $sql = 'SELECT *
         FROM blocks
-        WHERE hash = :hash';
+        WHERE height = :height';
 
 $q = $pdo -> prepare($sql);
 $q -> execute($task);
