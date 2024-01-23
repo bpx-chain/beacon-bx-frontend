@@ -260,7 +260,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     <pre id="json-raw-payload"></pre>
                 </div>
             </div>
-            <div class="row pt-2">
+            <div class="row">
                 <div class="alert alert-secondary" role="alert">
                     <i class="fa-solid fa-link"></i>
                     <a href="<?php echo EC_EXPLORER_URL.'/block/'.$body -> execution_payload -> blockNumber; ?>" target="_blank">
