@@ -111,7 +111,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                 </div>
                 <div class="col-12 col-md-9 col-lg-10">
                     <?php if($block['height'] == 0) echo $body -> foliage -> prev_block_hash; else { ?>
-                    <a href="/block/<?php echo $body -> foliage -> prev_block_hash; ?>">
+                    <a href="/block/<?php echo $block['height'] - 1; ?>">
                         <?php echo $body -> foliage -> prev_block_hash; ?>
                     </a>
                     <?php } ?>
