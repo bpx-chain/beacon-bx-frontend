@@ -108,6 +108,14 @@ if($state) {
 <?php
 }
 
+if($page == 1) {
+?>
+<script type="text/javascript">
+setTimeout(function(){ window. location. reload(); }, 15000);
+</script>
+<?php
+}
+
 getBlocks('Recent Blocks', $blocks, $page);
 
 getFooter();
