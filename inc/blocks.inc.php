@@ -23,7 +23,7 @@ function getRecentBlocks($pdo, $pageUnsafe, $ajax = false, $cur = null) {
     $q -> execute($task);
     $blocks = $q -> fetchAll();
     
-    if(isset($blocks[0]) && $blocks[0]['height'] == $cur)
+    if(isset($cur) && isset($blocks[0]) && $blocks[0]['height'] == intval($cur))
         return;
     
     getBlocks('Recent Blocks', $blocks, $page, '', $cur);
