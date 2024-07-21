@@ -2,7 +2,7 @@
 
 include_once __DIR__.'/main.inc.php';
 
-function getRecentBlocks($pdo, $pageUnsafe, $cur = null) {
+function getRecentBlocks($pdo, $pageUnsafe, $ajax = false, $cur = null) {
     $page = 1;
     if(isset($pageUnsafe) && is_numeric($pageUnsafe)) {
         $intPage = intval($pageUnsafe);
@@ -25,7 +25,7 @@ function getRecentBlocks($pdo, $pageUnsafe, $cur = null) {
     
     getBlocks('Recent Blocks', $blocks, $page, '', $cur);
     
-    if($page == 1) {
+    if(!$ajax && $page == 1) {
     ?>
     <script type="text/javascript">
         $(document).ready(function() {
