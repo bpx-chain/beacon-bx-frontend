@@ -29,12 +29,12 @@ function getRecentBlocks($pdo, $pageUnsafe, $ajax = false, $cur = null) {
     ?>
     <script type="text/javascript">
         $(document).ready(function() {
-            console.log('test');
             setInterval(function() {
                 let cur = $('.block').length ? '?cur=' + $('.block').first().data('height') : '';
                 $.get('/ajax/blocks' + cur, function(data) {
                     $('#blocks').replaceWith(data);
                 });
+                renderTimestamps();
             }, 5000);
         });
     </script>

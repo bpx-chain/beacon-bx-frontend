@@ -65,7 +65,7 @@ function getHeader($title) {
             
             .block-new {
                 animation-name: blink;
-                animation-duration: 1s;
+                animation-duration: 3s;
                 animation-iteration-count: 1;
                 animation-timing-function: ease-in-out;
             }
