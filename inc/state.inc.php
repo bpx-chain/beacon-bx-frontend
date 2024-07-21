@@ -13,7 +13,7 @@ function getState($pdo) {
     
     if($state) {
     ?>
-    <section>
+    <section id="state">
         <div class="row">
             <div class="col-6 col-md-4 col-lg-3 mb-4">
                 <div class="card h-100">

@@ -23,7 +23,7 @@ function getRecentBlocks($pdo, $pageUnsafe, $ajax = false, $cur = null) {
     $q -> execute($task);
     $blocks = $q -> fetchAll();
     
-    if(isset($cur) && isset($blocks[0]) && $blocks[0]['height'] == intval($cur))
+    if(isset($cur) && isset($blocks[0]) && $blocks[0]['height'] == $cur)
         return;
     
     getBlocks('Recent Blocks', $blocks, $page, '', $cur);
@@ -40,7 +40,7 @@ function getRecentBlocks($pdo, $pageUnsafe, $ajax = false, $cur = null) {
                     $('#blocks').replaceWith(data);
                     renderTimestamps();
                 });
-            }, 5000);
+            }, 10000);
         });
     </script>
     <?php
