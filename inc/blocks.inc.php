@@ -2,7 +2,7 @@
 
 include_once __DIR__.'/main.inc.php';
 
-function getRecentBlocks($pdo, $pageUnsafe, $cur) {
+function getRecentBlocks($pdo, $pageUnsafe, $cur = null) {
     $page = 1;
     if(isset($pageUnsafe) && is_numeric($pageUnsafe)) {
         $intPage = intval($pageUnsafe);
