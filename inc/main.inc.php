@@ -1,5 +1,15 @@
 <?php
 
+include_once __DIR__.'/../config.inc.php';
+
+function pdoConnect() {
+    $pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
+    $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    $pdo -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    return $pdo;
+}
+
 function getHeader($title) {
 ?>
 <!DOCTYPE html>
@@ -43,6 +53,23 @@ function getHeader($title) {
                 });
             }
         </script>
+        <style type="text/css">
+            @keyframes blink {
+                0%,100% {
+                    background-color: white;
+                }
+                25% {
+                    background-color: #E3EBF7;
+                }
+            }
+            
+            .block-new {
+                animation-name: blink;
+                animation-duration: 1s;
+                animation-iteration-count: 1;
+                animation-timing-function: ease-in-out;
+            }
+        </style>
     </head>
 
     <body>
@@ -83,7 +110,7 @@ function getFooter() {
 <?php
 }
 
-function getBlocks($title, $blocks, $page, $appendGet = '') {
+function getBlocks($title, $blocks, $page, $appendGet = '', $cur) {
 ?>
 <section class="mb-4">
     <div class="card">
@@ -138,8 +165,10 @@ function getBlocks($title, $blocks, $page, $appendGet = '') {
                     <tbody>
                         <?php
                         foreach($blocks as $b) {
+                            $trClass = (isset($cur) && is_numeric($cur) && intval($b['height']) > $cur)
+                                ? 'block-new' : '';
                         ?>
-                        <tr>
+                        <tr class="<?php echo $trClass; ?>">
                             <td>
                                 <a href="/block/<?php echo $b['height']; ?>">
                                     <?php echo $b['height']; ?>

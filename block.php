@@ -1,17 +1,13 @@
 <?php
 
-include_once __DIR__.'/config.inc.php';
 include_once __DIR__.'/inc/main.inc.php';
-
-$pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
-$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$pdo -> setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-$pdo -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 if(!isset($_GET['height']) || !ctype_digit($_GET['height'])) {
     header('Location: /404');
     die();
 }
+
+$pdo = pdoConnect();
 
 $task = [
     ':height' => $_GET['height']
