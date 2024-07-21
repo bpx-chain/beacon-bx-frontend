@@ -34,6 +34,15 @@ function getHeader($title) {
         <!-- JSON Viewer -->
         <script src="https://cdn.jsdelivr.net/npm/jquery.json-viewer@1.5.0/json-viewer/jquery.json-viewer.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.json-viewer@1.5.0/json-viewer/jquery.json-viewer.min.css">
+        <script type="text/javascript">
+            function renderTimestamps() {
+                $('.time').each(function() {
+                    $(this).html(
+                        new Date( $(this).data('time') * 1000 ).toLocaleString()
+                    );
+                });
+            }
+        </script>
     </head>
 
     <body>
@@ -65,6 +74,11 @@ function getFooter() {
             </div>
         </main>
     </body>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            renderTimestamps();
+        });
+    </script>
 </html>
 <?php
 }
@@ -142,7 +156,9 @@ function getBlocks($title, $blocks, $page, $appendGet = '') {
                                 </a>
                             </td>
                             <td>
-                                <?php if(isset($b['timestamp'])) echo date("Y-m-d H:i:s", $b['timestamp']); ?>
+                                <?php if(isset($b['timestamp'])) { ?>
+                                <span class="time" data-time="<?php echo $b['timestamp']; ?>"></span>
+                                <?php } ?>
                             </td>
                         </tr>
                         <?php

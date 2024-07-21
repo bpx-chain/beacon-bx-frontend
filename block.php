@@ -72,7 +72,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                 <div class="col-12 col-md-9 col-lg-10">
                     <?php
                         echo $block['timestamp']
-                            ? date("Y-m-d H:i:s", $block['timestamp'])
+                            ? '<span class="time" data-time="'.$block['timestamp'].'"></span>'
                             : '<span class="text-secondary">(null)</span>';
                     ?>
                 </div>
@@ -233,7 +233,7 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
                     <strong>Timestamp</strong>
                 </div>
                 <div class="col-12 col-md-9 col-lg-10">
-                    <?php echo date("Y-m-d H:i:s", $body -> execution_payload -> timestamp); ?>
+                    <span class="time" data-time="<?php echo $body -> execution_payload -> timestamp; ?>"></span>
                 </div>
             </div>
             <div class="row py-2 border-top">
@@ -333,9 +333,9 @@ getHeader('Block '.$block['height'].' | BPX Beacon Chain explorer');
 </section>
 <script type="text/javascript">
 $(document).ready(function() {
-    var jsonBlock = <?php echo $block['body']; ?>;
-    var jsonPayload = <?php echo json_encode($body -> execution_payload); ?>;
-    var options = {
+    let jsonBlock = <?php echo $block['body']; ?>;
+    let jsonPayload = <?php echo json_encode($body -> execution_payload); ?>;
+    let options = {
         collapsed: true
     };
     $('#json-raw-block').jsonViewer(jsonBlock, options);
