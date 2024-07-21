@@ -24,5 +24,20 @@ function getRecentBlocks($pdo, $pageUnsafe, $cur = null) {
     $blocks = $q -> fetchAll();
     
     getBlocks('Recent Blocks', $blocks, $page, '', $cur);
+    
+    if($page == 1) {
+    ?>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            setInterval(function() {
+                let cur = $('.block').length ? '?cur=' + $('.block').first().data('height') : '';
+                $.get('/ajax/blocks' + cur, function(data) {
+                    $('#blocks').replaceWith(data);
+                });
+            }, 5000);
+        });
+    </script>
+    <?php
+    }
 }
 ?>

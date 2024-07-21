@@ -112,7 +112,7 @@ function getFooter() {
 
 function getBlocks($title, $blocks, $page, $appendGet = '', $cur) {
 ?>
-<section class="mb-4">
+<section class="mb-4" id="blocks">
     <div class="card">
         <div class="card-header text-center py-3">
             <h5 class="mb-0 text-center">
@@ -168,7 +168,7 @@ function getBlocks($title, $blocks, $page, $appendGet = '', $cur) {
                             $trClass = (isset($cur) && is_numeric($cur) && intval($b['height']) > $cur)
                                 ? 'block-new' : '';
                         ?>
-                        <tr class="<?php echo $trClass; ?>">
+                        <tr class="block <?php echo $trClass; ?>" data-height="<?php echo $b['height']; ?>">
                             <td>
                                 <a href="/block/<?php echo $b['height']; ?>">
                                     <?php echo $b['height']; ?>
