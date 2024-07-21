@@ -29,6 +29,7 @@ function getRecentBlocks($pdo, $pageUnsafe, $cur = null) {
     ?>
     <script type="text/javascript">
         $(document).ready(function() {
+            console.log('test');
             setInterval(function() {
                 let cur = $('.block').length ? '?cur=' + $('.block').first().data('height') : '';
                 $.get('/ajax/blocks' + cur, function(data) {
